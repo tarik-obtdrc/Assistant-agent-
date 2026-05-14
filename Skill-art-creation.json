@@ -1,0 +1,30 @@
+﻿{
+  "id": "com.company.art-creation",
+  "name": "Art Creation",
+  "version": "1.0.0",
+  "description": "Generate slide visuals and icons for reports and presentations.",
+  "publisher": "Tarik",
+  "entryPoint": "https://<your-host>/api/skill/art-creation",
+  "actions": [
+    {
+      "id": "generateImage",
+      "name": "Generate Image",
+      "description": "Create one or more images based on a short prompt and style parameters.",
+      "inputs": [
+        { "name": "prompt", "type": "string", "required": true },
+        { "name": "style", "type": "string", "required": false },
+        { "name": "format", "type": "string", "required": false },
+        { "name": "variants", "type": "integer", "required": false }
+      ],
+      "outputs": [
+        { "name": "images", "type": "array" },
+        { "name": "metadata", "type": "object" }
+      ]
+    }
+  ],
+  "auth": { "type": "none" },
+  "icons": {
+    "16": "https://<your-host>/icons/art-16.png",
+    "64": "https://<your-host>/icons/art-64.png"
+  }
+}
