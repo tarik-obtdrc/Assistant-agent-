@@ -1,0 +1,29 @@
+﻿{
+  "id": "com.company.reminders",
+  "name": "Reminders",
+  "version": "1.0.0",
+  "description": "Suggest and manage reminders and local notifications without sending email.",
+  "publisher": "Tarik",
+  "entryPoint": "https://<your-host>/api/skill/reminders",
+  "actions": [
+    {
+      "id": "createReminder",
+      "name": "Create Reminder",
+      "description": "Create a reminder draft and return metadata; requires explicit user confirmation to persist.",
+      "inputs": [
+        { "name": "title", "type": "string", "required": true },
+        { "name": "datetime", "type": "string", "required": false },
+        { "name": "notes", "type": "string", "required": false }
+      ],
+      "outputs": [
+        { "name": "reminderDraft", "type": "object" },
+        { "name": "confirmationRequired", "type": "boolean" }
+      ]
+    }
+  ],
+  "auth": { "type": "none" },
+  "icons": {
+    "16": "https://<your-host>/icons/reminder-16.png",
+    "64": "https://<your-host>/icons/reminder-64.png"
+  }
+}

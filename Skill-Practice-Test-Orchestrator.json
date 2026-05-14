@@ -1,0 +1,43 @@
+﻿{
+  "id": "com.company.practice-test-orchestrator",
+  "name": "Practice Test Orchestrator",
+  "version": "1.0.0",
+  "description": "Generate and run practice tests with scoring and feedback.",
+  "publisher": "Tarik",
+  "entryPoint": "https://<your-host>/api/skill/practice-test-orchestrator",
+  "actions": [
+    {
+      "id": "createTest",
+      "name": "Create Test",
+      "description": "Generate a test with configurable question types and timing.",
+      "inputs": [
+        { "name": "topic", "type": "string", "required": true },
+        { "name": "numQuestions", "type": "integer", "required": false },
+        { "name": "questionTypes", "type": "string", "required": false },
+        { "name": "timeLimitMinutes", "type": "integer", "required": false }
+      ],
+      "outputs": [
+        { "name": "testId", "type": "string" },
+        { "name": "questions", "type": "array" }
+      ]
+    },
+    {
+      "id": "scoreTest",
+      "name": "Score Test",
+      "description": "Score submitted answers and return results with rationale.",
+      "inputs": [
+        { "name": "testId", "type": "string", "required": true },
+        { "name": "answers", "type": "array", "required": true }
+      ],
+      "outputs": [
+        { "name": "score", "type": "number" },
+        { "name": "feedback", "type": "array" }
+      ]
+    }
+  ],
+  "auth": { "type": "none" },
+  "icons": {
+    "16": "https://<your-host>/icons/test-16.png",
+    "64": "https://<your-host>/icons/test-64.png"
+  }
+}

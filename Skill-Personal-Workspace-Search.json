@@ -1,0 +1,30 @@
+﻿{
+  "id": "com.company.personal-workspace-search",
+  "name": "Personal Workspace Search",
+  "version": "1.0.0",
+  "description": "Search OneDrive and SharePoint for grounding and return file chunks with citations.",
+  "publisher": "Tarik",
+  "entryPoint": "https://<your-host>/api/skill/personal-workspace-search",
+  "actions": [
+    {
+      "id": "searchFiles",
+      "name": "Search Files",
+      "description": "Search files by query and return top chunks with file metadata.",
+      "inputs": [
+        { "name": "query", "type": "string", "required": true },
+        { "name": "siteUrl", "type": "string", "required": false },
+        { "name": "fileTypes", "type": "string", "required": false },
+        { "name": "topK", "type": "integer", "required": false }
+      ],
+      "outputs": [
+        { "name": "results", "type": "array" },
+        { "name": "citations", "type": "array" }
+      ]
+    }
+  ],
+  "auth": { "type": "none" },
+  "icons": {
+    "16": "https://<your-host>/icons/search-16.png",
+    "64": "https://<your-host>/icons/search-64.png"
+  }
+}

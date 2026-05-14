@@ -1,0 +1,29 @@
+﻿{
+  "id": "com.company.generate-flashcard",
+  "name": "Generate Flashcard",
+  "version": "1.0.0",
+  "description": "Create study flashcards from provided text or slide notes.",
+  "publisher": "Tarik",
+  "entryPoint": "https://<your-host>/api/skill/generate-flashcard",
+  "actions": [
+    {
+      "id": "createDeck",
+      "name": "Create Deck",
+      "description": "Produce a set of Q/A flashcards from input text.",
+      "inputs": [
+        { "name": "sourceText", "type": "string", "required": true },
+        { "name": "numCards", "type": "integer", "required": false },
+        { "name": "difficulty", "type": "string", "required": false }
+      ],
+      "outputs": [
+        { "name": "cards", "type": "array" },
+        { "name": "deckMetadata", "type": "object" }
+      ]
+    }
+  ],
+  "auth": { "type": "none" },
+  "icons": {
+    "16": "https://<your-host>/icons/flashcard-16.png",
+    "64": "https://<your-host>/icons/flashcard-64.png"
+  }
+}
